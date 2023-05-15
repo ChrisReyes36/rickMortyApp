@@ -23,6 +23,8 @@ export class FormSearchComponent implements OnInit {
       this.router.navigate(['/character-list'], {
         queryParams: { q: value },
       });
+    } else if (!value) {
+      this.router.navigate(['/home']);
     }
   };
 }

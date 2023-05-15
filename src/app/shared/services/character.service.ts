@@ -9,8 +9,8 @@ import { environment } from '@environment/environment';
 export class CharacterService {
   constructor(private http: HttpClient) {}
 
-  searchCharacter = (query = '', page = 1) => {
-    const filter = `${environment.baseUrlApi}/?name=${query}&page=${page}`;
+  searchCharacters = (query = '', page = 1) => {
+    const filter = `${environment.baseUrlApi}?name=${query}&page=${page}`;
     return this.http.get<Character[]>(filter);
   };
 
